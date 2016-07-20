@@ -1,5 +1,11 @@
-.duck {
-  display: block;
-  width: 120px;
-  margin: 1.5rem auto;
+#configurator {
+  display: flex;
+}
+
+#formContainer {
+  flex-grow: 1;
+}
+
+#rightContainer {
+  flex-grow: 1;
 }
