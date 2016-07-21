@@ -8,10 +8,10 @@ const propTypes = {
 class <%= pascalEntityName %> extends React.Component {
 	
 	constructor(props){
-		super(props);
+		super(props)
 
-		this.cp = this._getCProps();
-		this.cs = this._getCStyles();
+		this.cp = this._getCProps()
+		this.cs = this._getCStyles()
 	}
 
 	_getCStyles(){
@@ -21,15 +21,15 @@ class <%= pascalEntityName %> extends React.Component {
 	_getCProps(){
 		return{
 			<%= pascalEntityName %>: () => ({
-				className: <%= pascalEntityName %>
+				className: classes.<%= pascalEntityName %>
 			})
 		}
 	}
 
 	render(){
-		let {} = this.props;
+		let {} = this.props
 
-		let <%= pascalEntityName %> = this.cp.<%= pascalEntityName %>();
+		let <%= pascalEntityName %> = this.cp.<%= pascalEntityName %>()
 
 		return <div {...<%= pascalEntityName %>}>
 			<%= pascalEntityName %>
@@ -37,6 +37,6 @@ class <%= pascalEntityName %> extends React.Component {
 	}
 }
 
-<%= pascalEntityName %>.propTypes = propTypes;
+<%= pascalEntityName %>.propTypes = propTypes
 
-export default <%= pascalEntityName %>;
+export default <%= pascalEntityName %>

@@ -1,15 +1,15 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
-import { <%= pascalEntityName %> } from 'components/<%= pascalEntityName %>'
+import { ImageBox } from 'components/ImageBox'
 import { shallow } from 'enzyme'
 
-describe('(Component) <%= pascalEntityName %>', () => {
+describe('(Component) ImageBox', () => {
   let _props, _spies, _wrapper
 
   beforeEach(() => {
     _spies = {}
     _props = {}
-    _wrapper = shallow(<<%= pascalEntityName %> {..._props} />)
+    _wrapper = shallow(<ImageBox {..._props} />)
   })
 
   it('Should render as a <div>.', () => {

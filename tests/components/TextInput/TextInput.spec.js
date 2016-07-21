@@ -1,6 +1,6 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
-import { TextInput } from 'components/TextInput/TextInput'
+import { TextInput } from 'components/TextInput'
 import { shallow } from 'enzyme'
 
 describe('(Component) TextInput', () => {
@@ -12,9 +12,7 @@ describe('(Component) TextInput', () => {
     _wrapper = shallow(<TextInput {..._props} />)
   })
 
-  it('Should render as a <div>.', () => {
-    expect(_wrapper.is('div')).to.equal(true)
-  })
+  it('Should render as a <fieldset>.')
 
 
 })

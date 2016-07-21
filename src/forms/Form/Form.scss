@@ -1,0 +1,27 @@
+.textDetails{
+    margin-bottom: 30px;
+}
+
+.customizing {
+    margin-bottom: 20px;
+}
+
+.userDetails {
+    margin-bottom: 20px;
+}
+
+.submitButton{
+    padding: 10px;
+	width: 200px;
+	float: right;
+	margin: 20px;
+	cursor: pointer;
+	outline: none;
+	position: relative;
+	z-index: 1;
+	display: block;
+	overflow: hidden;
+    background: var(--form-active-color);
+    color: var(--form-submit-color);
+    font: 14px/1.21 Roboto, 'Helvetica Neue', arial, helvetica, sans-serif;
+}

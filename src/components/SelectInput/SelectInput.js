@@ -1,0 +1,200 @@
+import React from 'react'
+import classes from './SelectInput.scss'
+import TextInput from 'components/TextInput'
+
+const propTypes = {
+	value: 			React.PropTypes.string.isRequired,
+	onChange: 		React.PropTypes.func.isRequired,
+	label: 			React.PropTypes.string.isRequired,
+	isRequired: 	React.PropTypes.bool,
+	items: 			React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
+	// for SelectFontInput
+	itemFonts:		React.PropTypes.arrayOf(React.PropTypes.string),
+	//for SelectColorInput
+	itemsLeftSide:	React.PropTypes.array
+}
+
+class SelectInput extends React.Component {
+	
+	constructor(props){
+		super(props)
+
+		this.cp = this._getCProps()
+		this.cs = this._getCStyles()
+
+		this.openDropdown 			= this.openDropdown.bind(this)
+		this.closeDropdown 			= this.closeDropdown.bind(this)
+		this.clearValue 			= this.clearValue.bind(this)
+		this.onInputFocus 			= this.onInputFocus.bind(this)
+		this.onInputBlur 			= this.onInputBlur.bind(this)
+		this.onItemClick 			= this.onItemClick.bind(this)
+		this.onMouseEntersDropdown 	= this.onMouseEntersDropdown.bind(this)
+		this.onMouseLeavesDropdown 	= this.onMouseLeavesDropdown.bind(this)
+
+		this.cursorWithinDropdown = false
+
+		this.state = {
+			dropdownIsOpen: false
+		}
+	}
+
+	openDropdown(){
+		this.setState({
+			dropdownIsOpen: true
+		})
+	}
+
+	closeDropdown(){
+		this.setState({
+			dropdownIsOpen: false
+		})
+	}
+
+	clearValue(){
+		this.props.onChange()
+	}
+
+	onInputFocus(){
+		this.openDropdown()
+	}
+
+	onInputBlur(){
+		if(!this.cursorWithinDropdown){
+			this.closeDropdown()
+		}
+	}
+
+	onItemClick(item){
+		this.closeDropdown()
+		this.props.onChange(item)
+	}
+
+	onMouseEntersDropdown(){
+		this.cursorWithinDropdown = true
+	}
+
+	onMouseLeavesDropdown(){
+		this.cursorWithinDropdown = false
+	}
+
+	_getCStyles(){
+		return {
+			dropdown: (isOpen) => ({
+				willChange: "transform, visibility",
+				transition: "all 200ms ease-out",
+				transformOrigin: "top",
+				transform: 	isOpen
+								? "scaleY(1)"
+								: "scaleY(0)",
+				visibility: isOpen
+								? "visible"
+								: "hidden"
+			}),
+			clearButton: (isVisible) => ({
+				display:	isVisible
+								? "block"
+								: "none"
+			}),
+			dropdownButton: (isVisible) => ({
+				display:	isVisible
+								? "block"
+								: "none"
+			}),
+			dropdownItem: (isSelected, font) => ({
+				background:	isSelected
+								? "lightgrey"
+								: "",
+				fontFamily: font
+			})
+		}
+	}
+
+	_getCProps(){
+		return{
+			SelectInput: () => ({
+				className: classes.SelectInput
+			}),
+			textInput: () => ({
+				value: 			this.props.value,
+				onChange: 		this.props.onChange,
+				label: 			this.props.label,
+				isRequired: 	this.props.isRequired,
+				onFocus: 		this.onInputFocus,
+				onBlur: 		this.onInputBlur
+			}),
+			dropdown: () => ({
+				className: 		classes.dropdown,
+				onMouseEnter: 	this.onMouseEntersDropdown,
+				onMouseLeave: 	this.onMouseLeavesDropdown,
+				style:			this.cs.dropdown(this.state.dropdownIsOpen)
+			}),
+			dropdownItem: (item, index) => ({
+				key: 		index,
+				className: 	classes.dropdownItem,
+				onClick: 	() => this.onItemClick(item),
+				style: 		this.cs.dropdownItem(
+								this.props.value === item,
+								this.props.itemFonts
+									? this.props.itemFonts[index]
+									: ""
+							)
+			}),
+			clearButton: () => ({
+				className: 	classes.clearButton,
+				onClick: 	this.clearValue,
+				style:		this.cs.clearButton(this.props.value ? true : false)
+			}),
+			dropdownButton: () => ({
+				className: 	this.state.dropdownIsOpen
+								? classes.activeDropdownButton
+								: classes.dropdownButton,
+				style:		this.cs.dropdownButton(this.props.value ? false : true)
+			}),
+			leftSideItem: () => ({
+				className: classes.leftSideItem
+			})
+		}
+	}
+
+	renderItemsLeftSide(component){
+		let leftSideItem = this.cp.leftSideItem()
+
+		return <div {...leftSideItem}>
+			{component}
+		</div>
+	}
+
+	renderDropdownItem(item, index){
+		let dropdownItem = this.cp.dropdownItem(item, index)
+
+		return <div {...dropdownItem}>
+			{ this.props.itemsLeftSide && this.renderItemsLeftSide(this.props.itemsLeftSide[index])}
+			{item}
+		</div>
+	}
+
+	render(){
+		let { items } = this.props
+
+		let SelectInput 	= this.cp.SelectInput()
+		let dropdown 		= this.cp.dropdown()
+		let textInput 		= this.cp.textInput()
+		let clearButton 	= this.cp.clearButton()
+		let dropdownButton	= this.cp.dropdownButton()
+
+		return <div {...SelectInput}>
+			<TextInput {...textInput}/>
+			<div {...clearButton}>X</div>
+			<div {...dropdownButton}/>
+			<div {...dropdown}>
+				{
+					items.map( (_,i) => this.renderDropdownItem(_,i))
+				}
+			</div>
+		</div>
+	}
+}
+
+SelectInput.propTypes = propTypes
+
+export default SelectInput

@@ -10,3 +10,11 @@ For example:
 @import './variables/components';
 @import './themes/default';
 */
+
+
+:root{
+    --form-text-color: black;
+    --form-active-color: #B52556;
+    --form-border-bottom-color: #DDD;
+    --form-submit-color: white;
+}

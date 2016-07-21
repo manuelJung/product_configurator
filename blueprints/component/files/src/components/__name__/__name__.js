@@ -1,10 +1,16 @@
 import React from 'react'
 import classes from './<%= pascalEntityName %>.scss'
 
-export const <%= pascalEntityName %> = () => (
-  <div className={classes['<%= pascalEntityName %>']}>
-    <h1><%= pascalEntityName %></h1>
-  </div>
+const propTypes = {
+
+}
+
+let <%= pascalEntityName %> = (props) => (
+	<div className={classes.<%= pascalEntityName %>}>
+		<%= pascalEntityName %>
+	</div>
 )
+
+<%= pascalEntityName %>.propTypes = propTypes
 
 export default <%= pascalEntityName %>

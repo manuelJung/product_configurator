@@ -4,8 +4,23 @@
 
 #formContainer {
   flex-grow: 1;
+  padding: 15px;
+  padding-bottom: 0px;
+  padding-top: 10px;
+  padding-right: 0;
 }
 
 #rightContainer {
   flex-grow: 1;
+  padding: 15px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+#headline {
+  text-align: left;
+}
+
+#hr {
+  background: black;
 }
