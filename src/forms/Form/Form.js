@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
 
 import validate from './validate'
+import {sendMail} from 'utils/mailer'
 
 import TextInput from 'components/TextInput'
 import SelectInput from 'components/SelectInput'
@@ -114,7 +115,8 @@ Form.propTypes = propTypes;
 Form = reduxForm({
   form: 'Form',
   fields,
-  validate
+  validate,
+  onSubmit: (payload) => sendMail("manuel.jung.wwi12@gmail.com", null, "Produktkonfiguration Anfrage", "payload")
 })(Form);
 
 export default Form;
