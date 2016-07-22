@@ -58,7 +58,6 @@ if (__DEV__ && module.hot) {
       renderError(error)
     }
   }
-  module.hot.accept(['./routes/index'], () => render())
 }
 
 // ========================================================
