@@ -1,6 +1,6 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
-import { <%= pascalEntityName %> } from 'components/<%= pascalEntityName %>'
+import Connected<%= pascalEntityName %> from 'containers/Connected<%= pascalEntityName %>'
 import { shallow } from 'enzyme'
 
 describe('(Component) <%= pascalEntityName %>', () => {
@@ -9,7 +9,7 @@ describe('(Component) <%= pascalEntityName %>', () => {
   beforeEach(() => {
     _spies = {}
     _props = {}
-    _wrapper = shallow(<%= pascalEntityName %> {..._props} />)
+    _wrapper = shallow(Connected<%= pascalEntityName %> {..._props} />)
   })
 
   it('Should render as a <div>.', () => {

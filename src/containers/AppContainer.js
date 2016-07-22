@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react'
-import { Router } from 'react-router'
 import { Provider } from 'react-redux'
 import CoreLayout from 'layouts/CoreLayout'
 

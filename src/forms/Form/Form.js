@@ -13,24 +13,52 @@ import SelectColorInput from 'components/SelectColorInput'
 
 export const fields = ["textfirst", "textsecound", "textthird", "position", "font", "color", "fontsize", "name", "telefon", "email"]
 
-export const positions = ["auf Brusttasche", "linker Oberarm", "Rücken"]
+export const positions = [
+  "links in Brusthöhe",
+  "rechts in Brusthöhe",
+  "auf der Brusttasche",
+  "überhalb der Brusttasche",
+  "auf dem linken Oberarm",
+  "auf dem rechten Oberarm",
+  "auf dem linken Kragen",
+  "auf dem rechten Kragen",
+  "mittig auf dem Rücken (Schulterblatthöhe)"
+]
 
 export const fontSizes = ["1,5 cm", "2,5 cm", "3,5 cm"]
 
 export const colors = [
-  {label: "red", value: "red"},
-  {label: "green", value: "green"},
-  {label: "blue", value: "blue"},
-  {label: "yellow", value: "yellow"}
+  {label: "Weiß", value: "white"},
+  {label: "Schwarz", value: "black"},
+  {label: "Sekt", value: ""}, 
+  {label: "Gelb", value: "yellow"}, 
+  {label: "Mango", value: ""},
+  {label: "Rot", value: "red"}, 
+  {label: "Bordeaux", value: ""},
+  {label: "Brombeer", value: ""},
+  {label: "Pflaume", value: ""},
+  {label: "Apfelgrün", value: ""},
+  {label: "Moosgrün", value: ""}, 
+  {label: "Türkis", value: ""},
+  {label: "Blau", value: ""},
+  {label: "Sand", value: ""},
+  {label: "Taupe", value: ""}, 
+  {label: "Coca", value: ""}, 
+  {label: "Hellgrau", value: "lightgrey"},
+  {label: "Dunkelgrau", value: "grey"}
 ]
 
+
 export const fonts = [
-  { value: '"Courier New", Courier, monospace', label: "Courier New"},
-	{ value: 'Georgia, serif', label: 'Georgia, serif'},
-	{ value: '"Lucida Console", Monaco, monospace', label: "Lucida Console"},
-	{ value: 'Verdana, Geneva, sans-serif', label: 'Verdana'},
-	{ value: 'Impact, Charcoal, sans-serif', label: 'Impact, Charcoal'}
+  { label: "Blockschrift", value: ""},
+  { label: "Schreibschrift", value: ""},
+  { label: "Altdeutsch", value: ""},
+  { label: "Modern", value: ""},
+  { label: "Handschrift", value: ""},
+  { label: "Kursivschrift", value: ""},
+  { label: "Designschrift", value: ""}
 ]
+
 
 const propTypes = {
   handleSubmit: PropTypes.func.isRequired,

@@ -9,7 +9,7 @@ describe('(Component) <%= pascalEntityName %>', () => {
   beforeEach(() => {
     _spies = {}
     _props = {}
-    _wrapper = shallow(<<%= pascalEntityName %> {..._props} />)
+    _wrapper = shallow(<%= pascalEntityName %> {..._props} />)
   })
 
   it('Should render as a <div>.', () => {
