@@ -23,7 +23,7 @@ const store = createStore(initialState)
 // ========================================================
 if (__DEBUG__) {
   if (window.devToolsExtension) {
-    window.devToolsExtension.open()
+    //window.devToolsExtension.open()
   }
 }
 

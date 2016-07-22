@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../../components/Header'
 import classes from './CoreLayout.scss'
 import '../../styles/core.scss'
 
@@ -14,33 +13,54 @@ import getUrlParam from 'utils/getUrlParam'
 
 const productName = getUrlParam("name") || "no product name";
 
-export const CoreLayout = () => (
-  <div id={classes.configurator}>
-    
-    <div id={classes.formContainer}>
-      <h3 id={classes.headline}>{productName}</h3> 
-      <hr id={classes.hr}/>
-      <Form/>
+class CoreLayout extends React.Component {
+
+  renderForm(){
+    let { onFinish } = this.props
+
+    return <div id={classes.configurator}>
+      <div id={classes.formContainer}>
+        <h3 id={classes.headline}>{productName}</h3> 
+        <hr id={classes.hr}/>
+        <Form onFinish={onFinish}/>
+      </div>
+
+      <div id={classes.rightContainer}>
+
+        <ImageBox
+          headline="Personalisierungsort"
+          src={ExampleImage}/>
+        <ImageBox
+          headline="Schriftarten"
+          src={FontImage}/>
+        <ImageBox
+          headline="Schriftfarben"
+          src={ColorImage}/>
+          
+      </div>
     </div>
+  }
 
-    <div id={classes.rightContainer}>
-
-      <ImageBox
-        headline="Personalisierungsort"
-        src={ExampleImage}/>
-      <ImageBox
-        headline="Schriftarten"
-        src={FontImage}/>
-      <ImageBox
-        headline="Schriftfarben"
-        src={ColorImage}/>
-        
+  renderSuccess(){
+    return <div id={classes.configurator}>
+      Vielen Dank für ihre Bestellung
     </div>
+  }
 
-  </div>
-)
+  render(){
+    let { formularFinished } = this.props
+
+    if(formularFinished){
+      return this.renderSuccess()
+    }
+
+    return this.renderForm()
+  }
+}
 
 CoreLayout.propTypes = {
+  formularFinished: React.PropTypes.bool.isRequired,
+  onFinish: React.PropTypes.func.isRequired
 }
 
 export default CoreLayout

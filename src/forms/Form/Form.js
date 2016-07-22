@@ -62,10 +62,17 @@ export const fonts = [
 
 const propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  fields: PropTypes.object.isRequired
+  fields: PropTypes.object.isRequired,
+  onFinish: React.PropTypes.func.isRequired
 };
 
 export class Form extends Component {
+  handleSubmit(e){
+    e.preventDefault()
+    this.props.onFinish()
+    this.props.handleSubmit(e)
+  }
+
   render() {
     const {
       fields: { textfirst, textsecound, textthird, position, font, color, fontsize, name, telefon, email },
@@ -73,7 +80,7 @@ export class Form extends Component {
     } = this.props;
 
     return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={this.handleSubmit.bind(this)}>
 
         <div className={classes.textDetails}>
           <TextInput isRequired
@@ -125,7 +132,7 @@ export class Form extends Component {
             {...telefon}/>
 
             <TextInput isRequired
-            label="eMail"
+            label="E-Mail"
             placeholder="www.example@provider.com"
             {...email}/>
         </div>
@@ -144,7 +151,7 @@ Form = reduxForm({
   form: 'Form',
   fields,
   validate,
-  onSubmit: (payload) => sendMail("manuel.jung.wwi12@gmail.com", null, "Produktkonfiguration Anfrage", "payload")
+  onSubmit: (payload) => console.log("submit:", payload)
 })(Form);
 
 export default Form;

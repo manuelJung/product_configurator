@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Provider } from 'react-redux'
-import CoreLayout from 'layouts/CoreLayout'
+import ConnectedCoreLayout from 'containers/ConnectedCoreLayout'
 
 class AppContainer extends React.Component {
   static propTypes = {
@@ -13,7 +13,7 @@ class AppContainer extends React.Component {
     return (
       <Provider store={store}>
         <div style={{ height: '100%' }}>
-          <CoreLayout/>
+          <ConnectedCoreLayout/>
         </div>
       </Provider>
     )
