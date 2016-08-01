@@ -10,7 +10,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onFinish: () => dispatch(setFormularFinished(true))
+    onFinish: () => {
+      dispatch(setFormularFinished(true))
+    }
   }
 }
 

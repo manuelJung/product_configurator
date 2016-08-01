@@ -4,9 +4,10 @@ import '../../styles/core.scss'
 
 import Form from 'forms/Form'
 import ImageBox from 'components/ImageBox'
+import SuccessPage from 'components/SuccessPage'
 
 import ExampleImage from 'assets/personalisierungsort-kochja.png'
-import ColorImage from 'assets/schriftfarben.png'
+import PriceImage from 'assets/preistabelle_neu.png'
 import FontImage from 'assets/schriftart.png'
 
 import getUrlParam from 'utils/getUrlParam'
@@ -34,8 +35,8 @@ class CoreLayout extends React.Component {
           headline="Schriftarten"
           src={FontImage}/>
         <ImageBox
-          headline="Schriftfarben"
-          src={ColorImage}/>
+          headline="Preise"
+          src={PriceImage}/>
           
       </div>
     </div>
@@ -43,7 +44,7 @@ class CoreLayout extends React.Component {
 
   renderSuccess(){
     return <div id={classes.configurator}>
-      Vielen Dank für ihre Bestellung
+      <SuccessPage/>
     </div>
   }
 

@@ -11,7 +11,7 @@ import InfoText from 'components/InfoText'
 import SelectFontInput from 'components/SelectFontInput'
 import SelectColorInput from 'components/SelectColorInput'
 
-export const fields = ["textfirst", "textsecound", "textthird", "position", "font", "color", "fontsize", "name", "telefon", "email"]
+export const fields = ["textfirst", "textsecound", "textthird", "position", "font", "color", "fontsize", "firm", "name", "telefon", "email"]
 
 export const positions = [
   "links in Brusthöhe",
@@ -28,35 +28,35 @@ export const positions = [
 export const fontSizes = ["1,5 cm", "2,5 cm", "3,5 cm"]
 
 export const colors = [
-  {label: "Weiß", value: "white"},
-  {label: "Schwarz", value: "black"},
-  {label: "Sekt", value: ""}, 
-  {label: "Gelb", value: "yellow"}, 
-  {label: "Mango", value: ""},
-  {label: "Rot", value: "red"}, 
-  {label: "Bordeaux", value: ""},
-  {label: "Brombeer", value: ""},
-  {label: "Pflaume", value: ""},
-  {label: "Apfelgrün", value: ""},
-  {label: "Moosgrün", value: ""}, 
-  {label: "Türkis", value: ""},
-  {label: "Blau", value: ""},
-  {label: "Sand", value: ""},
-  {label: "Taupe", value: ""}, 
-  {label: "Coca", value: ""}, 
-  {label: "Hellgrau", value: "lightgrey"},
-  {label: "Dunkelgrau", value: "grey"}
+  {label: "Weiß",       value: "white"},
+  {label: "Schwarz",    value: "black"},
+  {label: "Sekt",       value: "#e2d9c2"}, 
+  {label: "Gelb",       value: "#f6be00"}, 
+  {label: "Mango",      value: "#ff9e1b"},
+  {label: "Rot",        value: "#a6192e"}, 
+  {label: "Bordeaux",   value: "#9b2242"},
+  {label: "Brombeer",   value: "#a20067"},
+  {label: "Pflaume",    value: "#612c51"},
+  {label: "Apfelgrün",  value: "#a4d65e"},
+  {label: "Moosgrün",   value: "#59621d"}, 
+  {label: "Türkis",     value: "#0082ba"},
+  {label: "Blau",       value: "#002f6c"},
+  {label: "Sand",       value: "#94795d"},
+  {label: "Taupe",      value: "#a69f88"}, 
+  {label: "Coca",       value: "#4e3629"}, 
+  {label: "Hellgrau",   value: "#898d8d"},
+  {label: "Dunkelgrau", value: "#63666a"}
 ]
 
 
 export const fonts = [
-  { label: "Blockschrift", value: ""},
-  { label: "Schreibschrift", value: ""},
-  { label: "Altdeutsch", value: ""},
-  { label: "Modern", value: ""},
-  { label: "Handschrift", value: ""},
-  { label: "Kursivschrift", value: ""},
-  { label: "Designschrift", value: ""}
+  { label: "Blockschrift",    value: "Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif"},
+  { label: "Schreibschrift",  value: "English Bold"},
+  { label: "Altdeutsch",      value: "Old Cologne Regular"},
+  { label: "Modern",          value: "Sprint / Speedy"},
+  { label: "Handschrift",     value: "Lucida Handwriting"},
+  { label: "Kursivschrift",   value: "Arial Kursiv"},
+  { label: "Designschrift",   value: "Comic MS Sans / Enviro"}
 ]
 
 
@@ -75,7 +75,7 @@ export class Form extends Component {
 
   render() {
     const {
-      fields: { textfirst, textsecound, textthird, position, font, color, fontsize, name, telefon, email },
+      fields: { textfirst, textsecound, textthird, position, font, color, fontsize, firm, name, telefon, email },
       handleSubmit
     } = this.props;
 
@@ -122,6 +122,10 @@ export class Form extends Component {
 
         <div className={classes.userDetails}>
           <TextInput isRequired
+            label="Firma"
+            {...firm}/>
+
+          <TextInput isRequired
             label="Vor- und Nachname"
             placeholder="Max Mustermann"
             {...name}/>
@@ -138,7 +142,7 @@ export class Form extends Component {
         </div>
 
         <button className={classes.submitButton}>
-          Anfrage Absenden
+          Anfrage absenden
         </button>
 
       </form>
@@ -151,7 +155,7 @@ Form = reduxForm({
   form: 'Form',
   fields,
   validate,
-  onSubmit: (payload) => console.log("submit:", payload)
+  onSubmit: (payload) => sendMail(payload)
 })(Form);
 
 export default Form;
