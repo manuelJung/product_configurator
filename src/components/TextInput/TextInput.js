@@ -79,7 +79,8 @@ class TextInput extends React.Component {
 				type: 			this.props.type || "text",
 				value: 			this.props.value,
 				onChange: 		this.props.onChange,
-				placeholder: 	this.props.placeholder,
+				// firefox hack
+				placeholder: 	this.state.isFocused ? this.props.placeholder : "",
 				required: 		this.props.isRequired,
 				onFocus: 		this.onInputFocus,
 				onBlur: 		this.onInputBlur

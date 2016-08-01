@@ -51,11 +51,13 @@
     // styling
     font-size: 20px;
     cursor: pointer;
-    color: var(--form-border-bottom-color);
+    // color: var(--form-border-bottom-color);
+    color: #DDD;
 }
 
 .clearButton:hover {
-    color: var(--form-active-color)
+    // color: var(--form-active-color);
+    color: #B52556;
 }
 
 .dropdownButton {
@@ -71,7 +73,8 @@
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     
-    border-top: 10px solid var(--form-border-bottom-color);
+    // border-top: 10px solid var(--form-border-bottom-color);
+    border-top: 10px solid #DDD;
 }
 
 .activeDropdownButton {
@@ -87,5 +90,6 @@
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     
-    border-top: 10px solid var(--form-active-color);
+    // border-top: 10px solid var(--form-active-color);
+    border-top: 10px solid #B52556;
 }

@@ -21,8 +21,10 @@
 	z-index: 1;
 	display: block;
 	overflow: hidden;
-    background: var(--form-active-color);
-    color: var(--form-submit-color);
+    // background: var(--form-active-color);
+	background: #B52556;
+    // color: var(--form-submit-color);
+	color: white;
     font: 14px/1.21 Roboto, 'Helvetica Neue', arial, helvetica, sans-serif;
 	border-style: none;
     border-color: none;

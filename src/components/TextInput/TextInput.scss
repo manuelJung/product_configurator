@@ -21,7 +21,8 @@
     border: none;
     border-radius: 0;
     box-shadow: none;
-    border-bottom: 1px solid var(--form-border-bottom-color);
+    // border-bottom: 1px solid var(--form-border-bottom-color);
+    border-bottom: 1px solid #DDD;
     font-size: 120%;
     outline: none;
     cursor: text;
@@ -42,7 +43,8 @@
 
     //styling
     border: none;
-    background: var(--form-active-color);
+    // background: var(--form-active-color);
+    background: #B52556;
     font-size: 1px;
     z-index: 10;
 }
@@ -56,7 +58,8 @@
     pointer-events: none;
 
     //styling
-    color: var(--form-text-color);
+    // color: var(--form-text-color);
+    color: black;
 }
 
 /*
