@@ -8,6 +8,7 @@ $position 		= $_POST['position'];
 $schrift 		= $_POST['font'];
 $farbe 			= $_POST['color'];
 $hoehe 			= $_POST['fontsize'];
+$firm 			= $_POST['firm'];
 $name 			= $_POST['name'];
 $telefon 		= $_POST['telefon'];
 $email 			= $_POST['email'];
@@ -24,22 +25,23 @@ $customerservicemail = "";
 
 // mail to service team
 $serviceteammessage = '
-	EINSTICKUNGSANFRAGE:
+	EINSTICKUNGSANFRAGE:\n\n
 
-	Name:         '.$name.'
-	Telefon:      '.$telefon.'
-	EMail:        '.$email.'
-
-	Produktname:  '.$productname.'
-	SKU:          '.$productnumber.'
-
-	Text Zeile 1: '.$text1.'
-	Text Zeile 2: '.$text2.'
-	Text Zeile 3: '.$text3.'
-	Position:     '.$position.'
-	Schriftart:   '.$schrift.'
-	Schriftfarbe: '.$farbe.'
-	Schriftgröße: '.$hoehe.'
+	Firma:        '.$firm.'\n
+    Name:         '.$name.'\n
+	Telefon:      '.$telefon.'\n
+	EMail:        '.$email.'\n
+    \n
+	Produktname:  '.$productname.'\n
+	SKU:          '.$productnumber.'\n
+    \n
+	Text Zeile 1: '.$text1.'\n
+	Text Zeile 2: '.$text2.'\n
+	Text Zeile 3: '.$text3.'\n
+	Position:     '.$position.'\n
+	Schriftart:   '.$schrift.'\n
+	Schriftfarbe: '.$farbe.'\n
+	Schriftgröße: '.$hoehe.'\n
 ';
 
 

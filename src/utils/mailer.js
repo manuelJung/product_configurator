@@ -3,7 +3,8 @@ import getUrlParam from './getUrlParam'
 
 
 export const sendMail = (fields) => {
-    let url = "http://testcejde.emmos.de/static/emtools/einstickung/sendmail.php"
+    //let url = "http://testcejde.emmos.de/static/emtools/einstickung/sendmail.php"
+    let url = "./sendmail.php"
     let data = new FormData("form")
     let productName = getUrlParam("name")
     let productNumber= getUrlParam("sku")
