@@ -5,6 +5,7 @@ const propTypes = {
 	value: 			React.PropTypes.string.isRequired,
 	onChange: 		React.PropTypes.func.isRequired,
 	label: 			React.PropTypes.string.isRequired,
+	type:			React.PropTypes.string,
 	placeholder: 	React.PropTypes.string,
 	isRequired: 	React.PropTypes.bool,
 	onFocus: 		React.PropTypes.func,
@@ -75,7 +76,7 @@ class TextInput extends React.Component {
 				className: 		classes.TextInput
 			}),
 			inputField: () => ({
-				type: 			"text",
+				type: 			this.props.type || "text",
 				value: 			this.props.value,
 				onChange: 		this.props.onChange,
 				placeholder: 	this.props.placeholder,
