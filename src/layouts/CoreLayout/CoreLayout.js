@@ -35,7 +35,7 @@ class CoreLayout extends React.Component {
           headline="Schriftarten"
           src={FontImage}/>
         <ImageBox
-          headline="Preise"
+          headline="Preise pro Artikel"
           src={PriceImage}/>
           
       </div>
