@@ -33,7 +33,7 @@ $serviceteammessage = '
 	EMail:        '.$email.'<br/>
     <br/>
 	Produktname:  '.$productname.'<br/>
-	SKU:          '.$productnumber.'<br/>
+	Produktnummer: '.$productnumber.'<br/>
     <br/>
 	Text Zeile 1: '.$text1.'<br/>
 	Text Zeile 2: '.$text2.'<br/>
@@ -123,8 +123,7 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 																	<td>'.$productname.'</td>
 																</tr>
 																<tr style="line-height: 25px;">
-																	<td>SKU:</td>
-																	<td>'.$productnumber.'</td>
+																	<td>Produktnummer:													<td>'.$productnumber.'</td>
 																</tr>
 																<tr style="line-height: 25px;">
 																	<td>Text Zeile 1:</td>
@@ -220,8 +219,8 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 							<tr>
 								<td style="font-size:12px;font-family:Arial,Helvetica;color:#474747;font-weight:normal" colspan="3">
 									<div style="padding:10px; float:right;">
-										<a style="text-decoration:none; color: #000000;" href="http://www.jobeline.de/hilfe+service/index.php?id=420">Impressum</a>                                        |
-										<a style="text-decoration:none; color: #000000;" href="http://www.jobeline.de/hilfe+service/index.php?id=419">AGB</a>
+										<a style="text-decoration:none; color: #000000;" href="http://www.jobeline.de/hilfe+service/index.php?id=419">Impressum</a>                                        |
+										<a style="text-decoration:none; color: #000000;" href="http://www.jobeline.de/hilfe+service/index.php?id=420">AGB</a>
 									</div>
 								</td>
 							</tr>
@@ -261,8 +260,8 @@ $usermessage 		= wordwrap($usermessage);
 $serviceteammessage = wordwrap($serviceteammessage);
 
 // Send
-$user_mail_success 			= mail($email, 'Jobeline - Einstickungsanfrage', $usermessage, $headers_user);
-$serviceteam_mail_success 	= mail($customerservicemail, 'Einstickungsanfrage ('.$email.')', $serviceteammessage, $headers_serviceteam);
+$user_mail_success 			= mail($email, 'Ihre Einstickungsanfrage bei JOBELINE', $usermessage, $headers_user);
+$serviceteam_mail_success 	= mail($customerservicemail, 'Kundenanfrage Einstickung JOBELINE Onlineshop ('.$email.')', $serviceteammessage, $headers_serviceteam);
 
 
 

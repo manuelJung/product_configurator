@@ -7,7 +7,7 @@ export const sendMail = (fields) => {
     let url = "./sendmail.php"
     let data = new FormData("form")
     let productName = getUrlParam("name")
-    let productNumber= getUrlParam("sku")
+    let productNumber= getUrlParam("productnumber")
 
     data.append("productname", productName)
     data.append("productnumber", productNumber)
