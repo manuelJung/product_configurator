@@ -7,7 +7,40 @@
   <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js"> -->
 </head>
 <body>
-  <div id="root" style="height: 100%">Loading...</div>
+  <style>
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+      }
+    }
+    @keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+      }
+    }
+    .loading {
+      margin: 0 auto;
+      margin-top: 40%;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      border: 0.25rem solid rgba(0, 0, 0, 0.2);
+      border-top-color: white;
+      -webkit-animation: spin 1s infinite linear;
+              animation: spin 1s infinite linear;
+    }
+  </style>
+  <div id="root" style="height: 100%"><div class="loading"></div></div>
 </body>
 </html>
 
