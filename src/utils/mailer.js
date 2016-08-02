@@ -16,9 +16,9 @@ export const sendMail = (fields) => {
 
     fetch(url, {method: "POST", body: data, mode: "no-cors"})
         .then(function(res) {
-            console.log(res)
+            
             return res.text();
         }).then(function(body) {
-            console.log(body);
+            
         });
 }
