@@ -21,7 +21,7 @@ if($text3 == "undefined"){
     $text3 = "";
 };
 
-$customerservicemail = "";
+$customerservicemail = $email; // TODO change mail to "kundenservice@hotelwaesche.de"
 
 // mail to service team
 $serviceteammessage = '
@@ -244,9 +244,13 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 
 
 
-$headers .= "From: Prämienshop Hotelwäsche <praemie@hotelwaesche.de>\r\n";
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Content-type: text/html; charset=utf-8\r\n";
+$headers_user .= "From: Prämienshop Hotelwäsche <kundenservice@hotelwaesche.de>\r\n";
+$headers_user .= "MIME-Version: 1.0\r\n";
+$headers_user .= "Content-type: text/html; charset=utf-8\r\n";
+
+$headers_serviceteam .= "From: Konfigurator Einstickung\r\n";
+$headers_serviceteam .= "MIME-Version: 1.0\r\n";
+$headers_serviceteam .= "Content-type: text/html; charset=utf-8\r\n";
 
 
 
@@ -257,8 +261,8 @@ $usermessage 		= wordwrap($usermessage);
 $serviceteammessage = wordwrap($serviceteammessage);
 
 // Send
-$user_mail_success 			= mail($email, 'Jobeline - Einstickungsanfrage', $usermessage, $headers);
-$serviceteam_mail_success 	= mail($email, 'Jobeline - Einstickungsanfrage', $serviceteammessage, $headers);
+$user_mail_success 			= mail($email, 'Jobeline - Einstickungsanfrage', $usermessage, $headers_user);
+$serviceteam_mail_success 	= mail($customerservicemail, 'Einstickungsanfrage ('.$email.')', $serviceteammessage, $headers_serviceteam);
 
 
 
