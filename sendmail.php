@@ -25,23 +25,23 @@ $customerservicemail = "";
 
 // mail to service team
 $serviceteammessage = '
-	EINSTICKUNGSANFRAGE:\n\n
-
-	Firma:        '.$firm.'\n
-    Name:         '.$name.'\n
-	Telefon:      '.$telefon.'\n
-	EMail:        '.$email.'\n
-    \n
-	Produktname:  '.$productname.'\n
-	SKU:          '.$productnumber.'\n
-    \n
-	Text Zeile 1: '.$text1.'\n
-	Text Zeile 2: '.$text2.'\n
-	Text Zeile 3: '.$text3.'\n
-	Position:     '.$position.'\n
-	Schriftart:   '.$schrift.'\n
-	Schriftfarbe: '.$farbe.'\n
-	Schriftgröße: '.$hoehe.'\n
+	EINSTICKUNGSANFRAGE:<br/>
+	<br/>
+	Firma:        '.$firm.'<br/>
+    Name:         '.$name.'<br/>
+	Telefon:      '.$telefon.'<br/>
+	EMail:        '.$email.'<br/>
+    <br/>
+	Produktname:  '.$productname.'<br/>
+	SKU:          '.$productnumber.'<br/>
+    <br/>
+	Text Zeile 1: '.$text1.'<br/>
+	Text Zeile 2: '.$text2.'<br/>
+	Text Zeile 3: '.$text3.'<br/>
+	Position:     '.$position.'<br/>
+	Schriftart:   '.$schrift.'<br/>
+	Schriftfarbe: '.$farbe.'<br/>
+	Schriftgröße: '.$hoehe.'<br/>
 ';
 
 
@@ -187,7 +187,7 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 
 												<tr>
 													<td style="font-size:12px;font-family:Arial,Helvetica;color:#474747;font-weight:normal" colspan="3">
-														Herzliche Grüße,<br/> Ihr Jobeline Team<br/><br/>
+														Herzliche Grüße,<br/> Ihr JOBELINE Team<br/><br/>
 													</td>
 												</tr>
 
