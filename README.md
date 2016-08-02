@@ -2,26 +2,6 @@
 
 This is a product configurator for [JOBELINE](http://www.jobeline.de/). 
 
-## Table of Contents
-1. [Features](#features)
-1. [Requirements](#requirements)
-1. [Getting Started](#getting-started)
-1. [Application Structure](#application-structure)
-1. [Development](#development)
-  1. [Developer Tools](#developer-tools)
-  1. [Routing](#routing)
-1. [Testing](#testing)
-1. [Deployment](#deployment)
-1. [Build System](#build-system)
-  1. [Configuration](#configuration)
-  1. [Root Resolve](#root-resolve)
-  1. [Globals](#globals)
-  1. [Styles](#styles)
-  1. [Server](#server)
-  1. [Production Optimization](#production-optimization)
-1. [Learning Resources](#learning-resources)
-1. [FAQ](#troubleshooting)
-1. [Thank You](#thank-you)
 
 ## Features
 * [react](https://github.com/facebook/react)
@@ -31,47 +11,11 @@ This is a product configurator for [JOBELINE](http://www.jobeline.de/).
 * [koa](https://github.com/koajs/koa)
 * [karma](https://github.com/karma-runner/karma)
 * [eslint](http://eslint.org)
+* [redux-form](https://github.com/erikras/redux-form)
 
 ## Requirements
 * node `^4.2.0`
 * npm `^3.0.0`
-
-## Getting Started
-
-After confirming that your development environment meets the specified [requirements](#requirements), you can create a new project based on `react-redux-starter-kit` in one of two ways:
-
-### Install from source
-
-First, clone or download:
-
-```bash
-$ git clone https://github.com/davezuko/react-redux-starter-kit.git
-// or
-$ wget -O react-redux-starter-kit.zip https://github.com/davezuko/react-redux-starter-kit/archive/master.zip
-$ unzip react-redux-starter-kit.zip
-```
-
-Then, rename to your project name and change into the directory:
-
-```bash
-$ mv react-redux-starter-kit <my-project-name>
-$ cd <my-project-name>
-```
-
-### Alternatively, install via `redux-cli`
-
-If not already installed (globally):
-
-```bash
-$ npm i redux-cli -g
-```
-
-Then, create a new project:
-
-```bash
-$ redux new <my-project-name>
-$ cd <my-project-name>
-```
 
 ### Install dependencies, and check to see it works
 
@@ -116,23 +60,12 @@ The application structure presented in this boilerplate is **fractal**, where fu
 │   ├── index.html           # Main HTML page container for app
 │   ├── main.js              # Application bootstrap and rendering
 │   ├── components           # Reusable Presentational Components
+│   ├── forms                # Formular
 │   ├── containers           # Reusable Container Components
 │   ├── layouts              # Components that dictate major page structure
-│   ├── redux                # "Ducks" location...
-│   │   └── modules          # reducer, action, creators not part of a route
-│   ├── routes               # Main route definitions and async split points
-│   │   ├── index.js         # Bootstrap main application routes with store
-│   │   └── Home             # Fractal route
-│   │       ├── index.js     # Route definitions and async split points
-│   │       ├── assets       # Assets required to render components
-│   │       ├── components   # Presentational React Components
-│   │       ├── container    # Connect components to actions and store
-│   │       ├── modules      # Collections of reducers/constants/actions
-│   │       └── routes **    # Fractal sub-routes (** optional)
 │   ├── static               # Static assets (not imported anywhere in source code)
+│   │   └── sendmail.php     # Script for sending form as mail to customer service and customer
 │   ├── store                # Redux-specific pieces
-│   │   ├── createStore.js   # Create and instrument redux store
-│   │   └── reducers.js      # Reducer registry and injection
 │   └── styles               # Application-wide styles (generally settings)
 └── tests                    # Unit tests
 ```
@@ -158,9 +91,6 @@ Then follow the [manual integration walkthrough](https://github.com/gaearon/redu
 npm install redux-cli --save-dev
 ```
 
-### Routing
-We use `react-router` [route definitions](https://github.com/reactjs/react-router/blob/master/docs/API.md#plainroute) (`<route>/index.js`) to define units of logic within our application. See the [application structure](#application-structure) section for more information.
-
 ## Testing
 To add a unit test, simply create a `.spec.js` file anywhere in `~/tests`. Karma will pick up on these files automatically, and Mocha and Chai will be available within your test without the need to import them. If you are using `redux-cli`, test files should automatically be generated when you create a component or redux module.
 
@@ -172,50 +102,7 @@ Out of the box, this starter kit is deployable by serving the `~/dist` folder ge
 ### Static Deployments
 If you are serving the application via a web server such as nginx, make sure to direct incoming routes to the root `~/dist/index.html` file and let react-router take care of the rest. If you are unsure of how to do this, you might find [this documentation](https://github.com/reactjs/react-router/blob/master/docs/guides/Histories.md#configuring-your-server) helpful. The Koa server that comes with the starter kit is able to be extended to serve as an API or whatever else you need, but that's entirely up to you.
 
-### Heroku
-
-Heroku has `nodejs buildpack` script that does the following when you deploy your app to Heroku.
-1. Find `packages.json` in the root directory.
-2. Install `nodejs` and `npm` packages.
-3. Run `npm postinstall script`
-4. Run `npm start`
-
-Therefore, you need to modify `package.json` before deploying to Heroku. Make the following changes in the `scripts` section of `package.json`.
-
-```
-...
-"start": "better-npm-run start:prod",
-"serve": "better-npm-run start",
-"postinstall": "npm run deploy:prod",
-"betterScripts": {
-  ...
-  "start:prod": {
-    "command": "babel-node bin/server",
-    "env": {
-      "NODE_ENV": "production"
-    }
-  }
-  ...
-},
-```
-
-It's also important to tell Heroku to install all `devDependencies` to successfully compile your app on Heroku's environment. Run the following in your terminal.
-
-```bash
-$ heroku config:set NPM_CONFIG_PRODUCTION=false
-```
-
-With this setup, you will install all the necessray packages, build your app, and start the webserver (e.g. koa) everytime you push your app to Heroku. Try to deploy to Heroku by running the following commands.
-
-```bash
-$ git add .
-$ git commit -m 'My awesome commit'
-$ git push heroku master
-```
-
-If you fail to deploy for an unknown reason, try [this helpful comment](https://github.com/davezuko/react-redux-starter-kit/issues/730#issuecomment-213997120) by [DonHansDampf](https://github.com/DonHansDampf) addressing Heroku deployments.
-
-Have more questions? Feel free to submit an issue or join the Gitter chat!
+Also it accepts two url params (name, productnumber) which indicate the current product. If not given, "no product name" will be displayed
 
 ## Build System
 
@@ -271,25 +158,11 @@ This starter kit comes packaged with an Koa server. It's important to note that 
 
 ### Production Optimization
 
-Babel is configured to use [babel-plugin-transform-runtime](https://www.npmjs.com/package/babel-plugin-transform-runtime) so transforms aren't inlined. Additionally, in production, we use [react-optimize](https://github.com/thejameskyle/babel-react-optimize) to further optimize your React code.
+Babel is configured to use [babel-plugin-transform-runtime](https://www.npmjs.com/package/babel-plugin-transform-runtime) so transforms aren't inlined.
 
 In production, webpack will extract styles to a `.css` file, minify your JavaScript, and perform additional optimizations such as module deduplication.
 
-## Learning Resources
-
-* [Starting out with react-redux-starter-kit](https://suspicious.website/2016/04/29/starting-out-with-react-redux-starter-kit/) is an introduction to the components used in this starter kit with a small example in the end.
-
-## FAQ
-
-Having trouble? Check out our [FAQ](https://github.com/davezuko/react-redux-starter-kit/wiki/FAQ:-Frequently-Asked-Questions) or submit an issue. Please be considerate by only posting issues that are directly related to this project; questions about how to implement certain React or Redux features are both best suited for StackOverflow or their respective repositories.
 
 ## Thank You
 
-This project wouldn't be possible without help from the community, so I'd like to highlight some of its biggest contributors. Thank you all for your hard work, you've made my life a lot easier and taught me a lot in the process.
-
-* [Justin Greenberg](https://github.com/justingreenberg) - For all of your PR's, getting us to Babel 6, and constant work improving our patterns.
-* [Roman Pearah](https://github.com/neverfox) - For your bug reports, help in triaging issues, and PR contributions.
-* [Spencer Dixin](https://github.com/SpencerCDixon) - For your creation of [redux-cli](https://github.com/SpencerCDixon/redux-cli).
-* [Jonas Matser](https://github.com/mtsr) - For your help in triaging issues and unending support in our Gitter channel.
-
-And to everyone else who has contributed, even if you are not listed here your work is appreciated.
+Thanks to [David Zukowski](https://github.com/davezuko) for his great [react-redux boilerplate](https://github.com/davezuko/react-redux-starter-kit) 
