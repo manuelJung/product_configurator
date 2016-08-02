@@ -15,6 +15,8 @@
 
 #rightContainer {
   flex-grow: 1;
+  max-width: 450px;
+  min-width: 350px;
   padding: 15px;
   padding-bottom: 0px;
   padding-top: 0px;
@@ -26,5 +28,20 @@
 
 #hr {
   background: black;
+}
+
+@media screen and (max-width: 700px) {
+  #configurator {
+    flex-direction: column;
+  }
+
+  #formContainer {
+    order: 2;
+  }
+
+  #rightContainer{
+    margin: 0 auto;
+    order: 1;
+  }
 }
 
