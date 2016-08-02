@@ -50,13 +50,13 @@ export const colors = [
 
 
 export const fonts = [
-  { label: "Blockschrift",    value: "Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif"},
-  { label: "Schreibschrift",  value: "English Bold"},
-  { label: "Altdeutsch",      value: "Old Cologne Regular"},
-  { label: "Modern",          value: "Sprint / Speedy"},
-  { label: "Handschrift",     value: "Lucida Handwriting"},
-  { label: "Kursivschrift",   value: "Arial Kursiv"},
-  { label: "Designschrift",   value: "Comic MS Sans / Enviro"}
+  { label: "Blockschrift",    value: ""}, // value: "Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif"},
+  { label: "Schreibschrift",  value: ""}, // value: "English Bold"},
+  { label: "Altdeutsch",      value: ""}, // value: "Old Cologne Regular"},
+  { label: "Modern",          value: ""}, // value: "Sprint / Speedy"},
+  { label: "Handschrift",     value: ""}, // value: "Lucida Handwriting"},
+  { label: "Kursivschrift",   value: ""}, // value: "Arial Kursiv"},
+  { label: "Designschrift",   value: ""} // value: "Comic MS Sans / Enviro"}
 ]
 
 
