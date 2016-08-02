@@ -33,9 +33,11 @@ class CoreLayout extends React.Component {
           src={ExampleImage}/>
         <ImageBox
           headline="Schriftarten"
+          padding={5}
           src={FontImage}/>
         <ImageBox
           headline="Preise pro Artikel"
+          padding={5}
           src={PriceImage}/>
           
       </div>

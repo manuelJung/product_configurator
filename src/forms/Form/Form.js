@@ -143,7 +143,7 @@ export class Form extends Component {
         </div>
 
         <button className={classes.submitButton}>
-          Anfrage absenden
+          Unverbindliche Anfrage absenden
         </button>
 
       </form>
