@@ -12,14 +12,9 @@ $firm 			= $_POST['firm'];
 $name 			= $_POST['name'];
 $telefon 		= $_POST['telefon'];
 $email 			= $_POST['email'];
+$haslogo 		= $_POST['logocheck'];
+$usertext       = $_POST['usertext'];
 
-if($text2 == "undefined"){
-    $text2 = "";
-};
-
-if($text3 == "undefined"){
-    $text3 = "";
-};
 
 $customerservicemail = $email; // TODO change mail to "kundenservice@hotelwaesche.de"
 
@@ -37,11 +32,14 @@ $serviceteammessage = '
     <br/>
 	Text Zeile 1: '.$text1.'<br/>
 	Text Zeile 2: '.$text2.'<br/>
-	Text Zeile 3: '.$text3.'<br/>
 	Position:     '.$position.'<br/>
 	Schriftart:   '.$schrift.'<br/>
 	Schriftfarbe: '.$farbe.'<br/>
 	Schriftgröße: '.$hoehe.'<br/>
+	Logo:         '.$haslogo.'<br/>
+	<br/>
+	Kundentext:<br/>
+	'.$usertext.'<br/>
 ';
 
 
@@ -123,7 +121,8 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 																	<td>'.$productname.'</td>
 																</tr>
 																<tr style="line-height: 25px;">
-																	<td>Produktnummer:													<td>'.$productnumber.'</td>
+																	<td>Produktnummer:</td>
+																	<td>'.$productnumber.'</td>
 																</tr>
 																<tr style="line-height: 25px;">
 																	<td>Text Zeile 1:</td>
@@ -132,10 +131,6 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 																<tr style="line-height: 25px;">
 																	<td>Text Zeile 2:</td>
 																	<td>'.$text2.'</td>
-																</tr>
-																<tr style="line-height: 25px;">
-																	<td>Text Zeile 3:</td>
-																	<td>'.$text3.'</td>
 																</tr>
 																<tr style="line-height: 25px;">
 																	<td>Position:</td>
@@ -149,9 +144,17 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 																	<td>Schriftfarbe:</td>
 																	<td>'.$farbe.'</td>
 																</tr>
-																<tr>
-																	<td>Schrifthöhe:</td>
+																<tr style="line-height: 25px;">
+																	<td>Schriftgröße:</td>
 																	<td>'.$hoehe.'</td>
+																</tr>
+																<tr style="line-height: 25px;">
+																	<td>Logo-Einstickung gewünscht:</td>
+																	<td>'.$haslogo.'</td>
+																</tr>
+																<tr style="line-height: 25px;">
+																	<td>Ihre persöhnliche Nachricht:</td>
+																	<td>'.$usertext.'</td>
 																</tr>
 															</tbody>
 
@@ -165,8 +168,8 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 														<br/>
 														Unser Service-Team wird sich so schnell wie möglich um Ihr
 														Anliegen kümmern und sich zeitnah per Telefon oder E-Mail bei Ihnen
-														melden.<br/><br/> Sollten Sie dennoch Fragen haben, können Sie uns unter
-														unserer kostenlosen Service-Hotline erreichen: 0800/628 84 50*<br/>
+														melden.<br/><br/> Sollten Sie Fragen haben  oder möchten Ihre Anfrage und eine Bestellung gleich mit uns besprechen, 
+														können Sie unter 0800 / 628 84 50* jederzeit einen unserer Servicemitarbeiter erreichen.
 														(* Kostenfrei aus dem dt. Fest- und Mobilfunknetz)
 													</td>
 												</tr>
@@ -219,7 +222,7 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 							<tr>
 								<td style="font-size:12px;font-family:Arial,Helvetica;color:#474747;font-weight:normal" colspan="3">
 									<div style="padding:10px; float:right;">
-										<a style="text-decoration:none; color: #000000;" href="http://www.jobeline.de/hilfe+service/index.php?id=419">Impressum</a>                                        |
+										<a style="text-decoration:none; color: #000000;" href="http://www.jobeline.de/hilfe+service/index.php?id=419">Impressum</a> |
 										<a style="text-decoration:none; color: #000000;" href="http://www.jobeline.de/hilfe+service/index.php?id=420">AGB</a>
 									</div>
 								</td>

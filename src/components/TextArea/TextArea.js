@@ -31,10 +31,10 @@ class TextArea extends React.Component {
 	render(){
 		let c_TextArea = this.cp.TextArea()
 
-		let { placeholder } = this.props;
+		let { placeholder, value, onChange } = this.props;
 
 		return <div {...c_TextArea}>
-			<textarea placeholder={placeholder}/>
+			<textarea placeholder={placeholder} value={value} onChange={onChange}/>
 		</div>
 	}
 }

@@ -13,7 +13,7 @@ import SelectColorInput from 'components/SelectColorInput'
 import TextArea from 'components/TextArea'
 import InputCheckbox from 'components/InputCheckbox'
 
-export const fields = ["textfirst", "textsecound", "textthird", "position", "font", "color", "fontsize", "firm", "name", "telefon", "email", "usertext", "logocheck"]
+export const fields = ["textfirst", "textsecound", "position", "font", "color", "fontsize", "firm", "name", "telefon", "email", "usertext", "logocheck"]
 
 export const positions = [
   "links in Brusthöhe",
@@ -89,7 +89,7 @@ export class Form extends Component {
 
   render() {
     const {
-      fields: { textfirst, textsecound, textthird, position, font, color, fontsize, firm, name, telefon, email, usertext, logocheck },
+      fields: { textfirst, textsecound, position, font, color, fontsize, firm, name, telefon, email, usertext, logocheck },
       handleSubmit
     } = this.props;
 

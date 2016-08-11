@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './InputCheckbox.scss'
 
 const propTypes = {
-	value: React.PropTypes.string.isRequired,
+	// value: React.PropTypes.bool.isRequired,
 	onChange: React.PropTypes.func.isRequired,
 	label: React.PropTypes.string.isRequired
 }
