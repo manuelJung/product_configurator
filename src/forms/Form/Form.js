@@ -10,8 +10,10 @@ import SelectInput from 'components/SelectInput'
 import InfoText from 'components/InfoText'
 import SelectFontInput from 'components/SelectFontInput'
 import SelectColorInput from 'components/SelectColorInput'
+import TextArea from 'components/TextArea'
+import InputCheckbox from 'components/InputCheckbox'
 
-export const fields = ["textfirst", "textsecound", "textthird", "position", "font", "color", "fontsize", "firm", "name", "telefon", "email"]
+export const fields = ["textfirst", "textsecound", "textthird", "position", "font", "color", "fontsize", "firm", "name", "telefon", "email", "usertext", "logocheck"]
 
 export const positions = [
   "links in Brusthöhe",
@@ -59,6 +61,18 @@ export const fonts = [
   { label: "Designschrift",   value: ""} // value: "Comic MS Sans / Enviro"}
 ]
 
+export const infoTextFirst = [
+  <div key="1">Gerne besprechen wir Ihren Einstickungs-Wunsch persönlich mit Ihnen!</div>,
+  <div key="2">Bitte teilen Sie uns Ihre Kontaktdaten sowie Ihre Telefonnummer und E-Mail-Adresse mit. 
+Unser Serviceteam wird sich zeitnah bei Ihnen melden!</div>
+]
+
+export const infoTextTwo = [
+  <div key="1">Hier können Sie uns ihre Wünsche, Fragen und nähere Angaben zu Größe, Farbe und Anzahl Ihres Wunschprodukts mitteilen (optional)</div>
+]
+
+export const usertextPlaceholder = "Beispiel:\nHallo, ich würde gerne diese Kochjacke in Größe 50 langarm in den Farben schwarz, weiß und grau jeweils 4 mal mit dem angegebenen Text besticken lassen"
+
 
 const propTypes = {
   handleSubmit: PropTypes.func.isRequired,
@@ -75,7 +89,7 @@ export class Form extends Component {
 
   render() {
     const {
-      fields: { textfirst, textsecound, textthird, position, font, color, fontsize, firm, name, telefon, email },
+      fields: { textfirst, textsecound, textthird, position, font, color, fontsize, firm, name, telefon, email, usertext, logocheck },
       handleSubmit
     } = this.props;
 
@@ -90,10 +104,6 @@ export class Form extends Component {
           <TextInput
             label="Geben Sie Ihren Text ein (Zeile 2)"
             {...textsecound}/>
-          
-          <TextInput
-            label="Geben Sie Ihren Text ein (Zeile 3)"
-            {...textthird}/>
         </div>
 
         <div className={classes.customizing}>
@@ -116,9 +126,13 @@ export class Form extends Component {
             label="Schrifthöhe"
             items={fontSizes}
             {...fontsize}/>
+
+          <InputCheckbox
+            label="Logo-Einstickung gewünscht"
+            {...logocheck}/>
         </div>
 
-        <InfoText/>
+        <InfoText text={infoTextFirst}/>
 
         <div className={classes.userDetails}>
           <TextInput isRequired
@@ -130,18 +144,23 @@ export class Form extends Component {
             placeholder="Max Mustermann"
             {...name}/>
 
-            <TextInput isRequired
+          <TextInput isRequired
             label="Telefonnummer"
             placeholder="0821 241245"
             {...telefon}/>
 
-            <TextInput isRequired
-            label="E-Mail"
+          <TextInput isRequired
+            label="E-Mail Adresse"
             type="email"
             placeholder="example@provider.com"
             {...email}/>
         </div>
 
+        <InfoText text={infoTextTwo}/>
+
+        <TextArea
+          placeholder={usertextPlaceholder}
+          {...usertext}/>
         <button className={classes.submitButton}>
           Unverbindliche Anfrage absenden
         </button>
