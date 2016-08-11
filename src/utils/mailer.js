@@ -12,19 +12,14 @@ export const sendMail = (fields) => {
     fields.textsecound = fields.textsecound || ""
     fields.usertext    = fields.usertext || ""
     fields.logocheck   = fields.logocheck ? "Ja" : "Nein"
-    fields.usertext    = fields.usertext.split("\n").joint("<br/>")
+    fields.usertext    = fields.usertext.split("\n").join("<br/>")
 
     data.append("productname", productName)
     data.append("productnumber", productNumber)
 
-    console.log(fields)
     Object.keys(fields).forEach( key => data.append(key, fields[key]))
 
     fetch(url, {method: "POST", body: data, mode: "no-cors"})
-        .then(function(res) {
-            
-            return res.text();
-        }).then(function(body) {
-            
-        });
+        .then( res => res.text())
+
 }
