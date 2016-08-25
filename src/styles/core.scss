@@ -1,3 +1,46 @@
+@font-face { 
+  font-family: 'arial-rounded-mt-bold';
+  src: url('./static/fonts/Arial-Rounded-MT-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
+  // src: url('./static/fonts/Arial-Rounded-MT-Bold.woff') format('woff'); /* Pretty Modern Browsers */
+  // src: url('./static/fonts/Arial-Rounded-MT-Bold.otf'); /* IE9 Compat Modes */
+}
+@font-face { 
+  font-family: 'english-bo-bold';
+  src: url('./static/fonts/English-Bo-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
+  // src: url('./static/fonts/English-Bo-Bold.woff') format('woff'); /* Pretty Modern Browsers */
+  // src: url('./static/fonts/English-Bo-Bold.otf'); /* IE9 Compat Modes */
+}
+@font-face { 
+  font-family: 'lucida-handwriting';
+  src: url('./static/fonts/Lucida-Handwriting.ttf') format('truetype'); /* Safari, Android, iOS */
+  // src: url('./static/fonts/Lucida-Handwriting.woff') format('woff'); /* Pretty Modern Browsers */
+  // src: url('./static/fonts/Lucida-Handwriting.otf'); /* IE9 Compat Modes */
+}
+@font-face { 
+  font-family: 'old-cologne-regular';
+  src: url('./static/fonts/Old-Cologne-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+  // src: url('./static/fonts/Old-Cologne-Regular.woff') format('woff'); /* Pretty Modern Browsers */
+  // src: url('./static/fonts/Old-Cologne-Regular.otf'); /* IE9 Compat Modes */
+}
+@font-face { 
+  font-family: 'rickshaw';
+  src: url('./static/fonts/Rickshaw.ttf') format('truetype'); /* Safari, Android, iOS */
+  // src: url('./static/fonts/Rickshaw.woff') format('woff'); /* Pretty Modern Browsers */
+  // src: url('./static/fonts/Rickshaw.otf'); /* IE9 Compat Modes */
+}
+@font-face { 
+  font-family: 'sprint';
+  // src: url('./static/fonts/Sprint.ttf') format('truetype'); /* Safari, Android, iOS */
+  // src: url('./static/fonts/Sprint.woff') format('woff'); /* Pretty Modern Browsers */
+  src: url('./static/fonts/Sprint.otf'); /* IE9 Compat Modes */
+}
+@font-face { 
+  font-family: 'zipf-light';
+  src: url('./static/fonts/Zipf-Light.ttf') format('truetype'); /* Safari, Android, iOS */
+  // src: url('./static/fonts/Zipf-Light.woff') format('woff'); /* Pretty Modern Browsers */
+  // src: url('./static/fonts/Zipf-Light.otf'); /* IE9 Compat Modes */
+}
+
 :global {
   @import 'base';
   @import '~normalize.css/normalize';

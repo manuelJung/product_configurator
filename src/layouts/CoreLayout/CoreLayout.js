@@ -16,8 +16,6 @@ import getUrlParam from 'utils/getUrlParam'
 
 const productName = getUrlParam("name") || "no product name";
 const infotext = [
-  <div key="1">Bei einer Bestellung über 20 Teile erhalten Sie 10% Mengenrabatt.</div>,
-  <br key="2"/>,
   <div key="3">Es handelt sich hierbei nicht um eine rechtskräftige Bestellung. Nach Absenden der Abfrage bekommen Sie von uns ein Angebot für die Einstickung und die zu bestickende Ware.</div>,
   <div key="4"><b>Sollten Sie Fragen haben oder möchten Ihre Anfrage und eine Bestellung gleich mit uns besprechen, können Sie unter 0800/6288450* jederzeit einen unserer Servicemitarbeiter erreichen.</b></div>,
   <div key="5">(*Kostenfrei aus dem dt. Fest- und Mobilfunknetz)</div>
@@ -41,9 +39,9 @@ class CoreLayout extends React.Component {
           headline="Personalisierungsort"
           src={ExampleImage}/>
         <ImageBox
-          headline="Schriftarten"
+          headline="Preistabelle"
           padding={5}
-          src={FontImage}/>
+          src={PriceImage}/>
         <ConnectedPriceField/>
         <InfoText text={infotext}/>
           

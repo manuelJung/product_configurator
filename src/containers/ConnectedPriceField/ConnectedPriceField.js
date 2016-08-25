@@ -11,15 +11,19 @@ const getPrice = ({textfirst, textsecound, position, fontsize}) => {
   fontsize = fontsize || {value: "1,5 cm"}
   var price = 0
   var priceFirstLine = !hasValue(textfirst) ? 0
-                      :fontsize.value === "1,5 cm" ? 3.99
-                      :fontsize.value === "2,5 cm" ? 4.49
-                      :fontsize.value === "3,5 cm" ? 4.99
-                      : 4.99 
+                      :fontsize.value === "1,5 cm" ? 3.39
+                      :fontsize.value === "2,5 cm" ? 3.79
+                      :fontsize.value === "3,5 cm" ? 4.29
+                      : 4.29
   var priceSecoundLine = !hasValue(textsecound) ? 0
-                        :fontsize.value === "1,5 cm" ? 2.99
-                        :fontsize.value === "2,5 cm" ? 3.49
-                        :fontsize.value === "3,5 cm" ? 3.99
-                        : 4.99
+                        :fontsize.value === "1,5 cm" ? 3.39
+                        :fontsize.value === "2,5 cm" ? 3.79
+                        :fontsize.value === "3,5 cm" ? 4.29
+                        : 4.29
+  
+  if(position && position.value === "auf der Brusttasche"){
+    price += 3
+  }
 
   price += priceFirstLine + priceSecoundLine
 

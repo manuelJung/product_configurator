@@ -52,13 +52,13 @@ export const colors = [
 
 
 export const fonts = [
-  { label: "Blockschrift",    value: ""}, // value: "Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif"},
-  { label: "Schreibschrift",  value: ""}, // value: "English Bold"},
-  { label: "Altdeutsch",      value: ""}, // value: "Old Cologne Regular"},
-  { label: "Modern",          value: ""}, // value: "Sprint / Speedy"},
-  { label: "Handschrift",     value: ""}, // value: "Lucida Handwriting"},
-  { label: "Kursivschrift",   value: ""}, // value: "Arial Kursiv"},
-  { label: "Designschrift",   value: ""} // value: "Comic MS Sans / Enviro"}
+  { label: "Blockschrift",    value: "arial-rounded-mt-bold"},
+  { label: "Schreibschrift",  value: "english-bo-bold"},
+  { label: "Altdeutsch",      value: "lucida-handwriting"},
+  { label: "Modern",          value: "old-cologne-regular"},
+  { label: "Handschrift",     value: "rickshaw"},
+  { label: "Kursivschrift",   value: "sprint"},
+  { label: "Designschrift",   value: "zipf-light"}
 ]
 
 export const infoTextFirst = [
@@ -98,11 +98,11 @@ export class Form extends Component {
 
         <div className={classes.textDetails}>
           <TextInput isRequired
-            label="Geben Sie Ihren Text ein (Zeile 1)"
+            label="Textzeile 1 - max. 15 Buchstaben"
             {...textfirst}/>
 
           <TextInput
-            label="Geben Sie Ihren Text ein (Zeile 2)"
+            label="Textzeile 2 - max. 15 Buchstaben"
             {...textsecound}/>
         </div>
 
@@ -150,7 +150,7 @@ export class Form extends Component {
             {...telefon}/>
 
           <TextInput isRequired
-            label="E-Mail Adresse"
+            label="E-Mail-Adresse"
             type="email"
             placeholder="example@provider.com"
             {...email}/>
