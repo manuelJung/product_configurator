@@ -13,6 +13,14 @@ import SelectColorInput from 'components/SelectColorInput'
 import TextArea from 'components/TextArea'
 import InputCheckbox from 'components/InputCheckbox'
 
+import font1 from 'assets/fonts/Blockschrift.png'
+import font2 from 'assets/fonts/Schreibschrift.png'
+import font3 from 'assets/fonts/Altdeutsch.png'
+import font4 from 'assets/fonts/Modern.png'
+import font5 from 'assets/fonts/Handschrift.png'
+import font6 from 'assets/fonts/Kursivschrift.png'
+import font7 from 'assets/fonts/Designschrift.png'
+
 export const fields = ["textfirst", "textsecound", "position", "font", "color", "fontsize", "firm", "name", "telefon", "email", "usertext", "logocheck"]
 
 export const positions = [
@@ -52,13 +60,13 @@ export const colors = [
 
 
 export const fonts = [
-  { label: "Blockschrift",    value: "arial-rounded-mt-bold"},
-  { label: "Schreibschrift",  value: "english-bo-bold"},
-  { label: "Altdeutsch",      value: "lucida-handwriting"},
-  { label: "Modern",          value: "old-cologne-regular"},
-  { label: "Handschrift",     value: "rickshaw"},
-  { label: "Kursivschrift",   value: "sprint"},
-  { label: "Designschrift",   value: "zipf-light"}
+  { label: "Blockschrift",    value: font1},
+  { label: "Schreibschrift",  value: font2},
+  { label: "Altdeutsch",      value: font3},
+  { label: "Modern",          value: font4},
+  { label: "Handschrift",     value: font5},
+  { label: "Kursivschrift",   value: font6},
+  { label: "Designschrift",   value: font7}
 ]
 
 export const infoTextFirst = [

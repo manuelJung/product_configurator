@@ -9,7 +9,7 @@ const propTypes = {
 	isRequired: 	React.PropTypes.bool,
 	items: 			React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
 	// for SelectFontInput
-	itemFonts:		React.PropTypes.arrayOf(React.PropTypes.string),
+	imgSrcs:		React.PropTypes.arrayOf(React.PropTypes.string),
 	//for SelectColorInput
 	itemsLeftSide:	React.PropTypes.array
 }
@@ -100,11 +100,10 @@ class SelectInput extends React.Component {
 								? "block"
 								: "none"
 			}),
-			dropdownItem: (isSelected, font) => ({
+			dropdownItem: (isSelected) => ({
 				background:	isSelected
 								? "lightgrey"
-								: "",
-				fontFamily: font
+								: ""
 			})
 		}
 	}
@@ -132,12 +131,7 @@ class SelectInput extends React.Component {
 				key: 		index,
 				className: 	classes.dropdownItem,
 				onClick: 	() => this.onItemClick(item),
-				style: 		this.cs.dropdownItem(
-								this.props.value === item,
-								this.props.itemFonts
-									? this.props.itemFonts[index]
-									: ""
-							)
+				style: 		this.cs.dropdownItem(this.props.value === item)
 			}),
 			clearButton: () => ({
 				className: 	classes.clearButton,
@@ -165,7 +159,15 @@ class SelectInput extends React.Component {
 	}
 
 	renderDropdownItem(item, index){
+		let isImgItem = !!this.props.imgSrcs
+		
 		let dropdownItem = this.cp.dropdownItem(item, index)
+		
+		if(isImgItem){
+			return <div {...dropdownItem}>
+				<img src={this.props.imgSrcs[index]}/>
+			</div>
+		}
 
 		return <div {...dropdownItem}>
 			{ this.props.itemsLeftSide && this.renderItemsLeftSide(this.props.itemsLeftSide[index])}

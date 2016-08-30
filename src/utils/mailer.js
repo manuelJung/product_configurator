@@ -3,7 +3,6 @@ import getUrlParam from './getUrlParam'
 
 
 export const sendMail = (fields) => {
-    //let url = "http://testcejde.emmos.de/static/emtools/einstickung/sendmail.php"
     let url = "./sendmail.php"
     let data = new FormData("form")
     let productName = getUrlParam("name")
@@ -19,7 +18,6 @@ export const sendMail = (fields) => {
 
     Object.keys(fields).forEach( key => data.append(key, fields[key]))
 
-    fetch(url, {method: "POST", body: data, mode: "no-cors"})
-        .then( res => res.text())
+    fetch(url, {method: "POST", body: data})
 
 }

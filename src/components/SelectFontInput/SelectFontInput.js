@@ -49,7 +49,7 @@ class SelectFontInput extends React.Component {
 				label:		this.props.label,
 				isRequired:	this.props.isRequired,
 				items:		this.getLabels(),
-				itemFonts:	this.getFonts()
+				imgSrcs:	this.getFonts()
 			})
 		}
 	}

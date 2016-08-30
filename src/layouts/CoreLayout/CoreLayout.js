@@ -6,9 +6,8 @@ import Form from 'forms/Form'
 import ImageBox from 'components/ImageBox'
 import SuccessPage from 'components/SuccessPage'
 
-import ExampleImage from 'assets/personalisierungsort-kochja.png'
-import PriceImage from 'assets/preistabelle_neu.png'
-import FontImage from 'assets/schriftart.png'
+import ExampleImage from 'assets/demo-kochjacke.png'
+import PriceImage from 'assets/preistabelle.png'
 import InfoText from 'components/InfoText'
 import ConnectedPriceField from 'containers/ConnectedPriceField'
 
