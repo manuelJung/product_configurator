@@ -9,7 +9,7 @@ let PriceField = (props) => (
 	<div className={classes.PriceField}>
 		<div className={classes.headlineWrapper}><h3>Preis pro Artikel</h3></div>
 		<div className={classes.text}>Vorraussichtliche Kosten pro Einstickung:
-			<span className={classes.price}>{props.price} €</span>
+			<span className={classes.price}>{Math.round(props.price * 100) / 100} €</span>
 		</div>
 	</div>
 )
