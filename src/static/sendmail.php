@@ -2,8 +2,7 @@
 $productnumber 	= $_POST['productnumber'];
 $productname 	= $_POST['productname'];
 $text1 			= $_POST['textfirst'];
-$text2 			= $_POST['textsecond'];
-$text3 			= $_POST['textthird'];
+$text2 			= $_POST['textsecound'];
 $position 		= $_POST['position'];
 $schrift 		= $_POST['font'];
 $farbe 			= $_POST['color'];
@@ -246,7 +245,7 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 
 
 
-$headers_user .= "From: Prämienshop Hotelwäsche <kundenservice@hotelwaesche.de>\r\n";
+$headers_user .= "From: Prämienshop Hotelwäsche <service@jobeline.de>\r\n";
 $headers_user .= "MIME-Version: 1.0\r\n";
 $headers_user .= "Content-type: text/html; charset=utf-8\r\n";
 

@@ -4,7 +4,7 @@ import getUrlParam from './getUrlParam'
 
 export const sendMail = (fields) => {
     let url = "./sendmail.php"
-    let data = new FormData("form")
+    let data = new FormData()
     let productName = getUrlParam("name")
     let productNumber= getUrlParam("productnumber")
 

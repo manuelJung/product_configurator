@@ -76,7 +76,7 @@ Unser Serviceteam wird sich zeitnah bei Ihnen melden!</div>
 ]
 
 export const infoTextTwo = [
-  <div key="1">Hier können Sie uns ihre Wünsche, Fragen und nähere Angaben zu Größe, Farbe und Anzahl Ihres Wunschprodukts mitteilen (optional)</div>
+  <div key="1">Hier können Sie uns Ihre Wünsche, Fragen und nähere Angaben zu Größe, Farbe und Anzahl Ihres Wunschprodukts mitteilen (optional).</div>
 ]
 
 export const usertextPlaceholder = "Beispiel:\nHallo, ich würde gerne diese Kochjacke in Größe 50 langarm in den Farben schwarz, weiß und grau jeweils 4 mal mit dem angegebenen Text besticken lassen"
