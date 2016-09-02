@@ -245,7 +245,7 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 
 
 
-$headers_user .= "From: Prämienshop Hotelwäsche <service@jobeline.de>\r\n";
+$headers_user .= "From: Kundenservice JOBELINE <service@jobeline.de>\r\n";
 $headers_user .= "MIME-Version: 1.0\r\n";
 $headers_user .= "Content-type: text/html; charset=utf-8\r\n";
 
