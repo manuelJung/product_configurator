@@ -15,7 +15,7 @@ $haslogo 		= $_POST['logocheck'];
 $usertext       = $_POST['usertext'];
 
 
-$customerservicemail = $email; // TODO change mail to "kundenservice@hotelwaesche.de"
+$customerservicemail = "service@jobeline.de";
 
 // mail to service team
 $serviceteammessage = '
