@@ -20,4 +20,7 @@ export const sendMail = (fields) => {
 
     fetch(url, {method: "POST", body: data})
 
+    // send tracking event
+    parent._gaq.push(["_trackEvent", "Produktkonfigurator", "Send", productName])
+
 }

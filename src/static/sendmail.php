@@ -60,7 +60,7 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 
 
 <div width="100%" align="center">
-	<table width="610" cellspacing="0" cellpadding="0">
+	<table width="610" cellspacing="0" cellpadding="0" style="background: white;">
 		<tbody>
 			<tr>
 				<td style="border:1px solid #B52555">
