@@ -4,6 +4,7 @@ import { reduxForm } from 'redux-form'
 
 import validate from './validate'
 import {sendMail} from 'utils/mailer'
+import { getFormConfig } from './config'
 
 import TextInput from 'components/TextInput'
 import SelectInput from 'components/SelectInput'
@@ -20,6 +21,8 @@ import font4 from 'assets/fonts/Modern.png'
 import font5 from 'assets/fonts/Handschrift.png'
 import font6 from 'assets/fonts/Kursivschrift.png'
 import font7 from 'assets/fonts/Designschrift.png'
+
+
 
 export const fields = ["textfirst", "textsecound", "position", "font", "color", "fontsize", "firm", "name", "telefon", "email", "usertext", "logocheck"]
 
@@ -100,6 +103,8 @@ export class Form extends Component {
       fields: { textfirst, textsecound, position, font, color, fontsize, firm, name, telefon, email, usertext, logocheck },
       handleSubmit
     } = this.props;
+
+    // const config = getFormConfig
 
     return (
       <form onSubmit={this.handleSubmit.bind(this)}>
