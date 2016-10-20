@@ -1,10 +1,21 @@
+import React from 'react'
+
 import getUrlParam from './getUrlParam'
+
+
+import font1 from 'assets/fonts/Blockschrift.png'
+import font2 from 'assets/fonts/Schreibschrift.png'
+import font3 from 'assets/fonts/Altdeutsch.png'
+import font4 from 'assets/fonts/Modern.png'
+import font5 from 'assets/fonts/Handschrift.png'
+import font6 from 'assets/fonts/Kursivschrift.png'
+import font7 from 'assets/fonts/Designschrift.png'
 
 
 const appConfig = {
     productName: getUrlParam("name") || 'no product name',
     productNumber: getUrlParam("productnumber") || '',
-    category: getUrlParam("category") || 'Kochjacken' // TODO
+    category: getUrlParam("category") || 'Polos & Shirts' // TODO
 }
 
 const formConfigAll = {
@@ -121,10 +132,33 @@ const priceImageUrls = {
     'Polos & Shirts': require('assets/preistabelle-rest.png')
 }
 
-export const getAppConfig = () => appConfig
-export const getExampleImageUrl = () => exampleImageUrls[appConfig.category]
-export const getPriceImageUrl = () => priceImageUrls[appConfig.category]
-export const getFormConfig = () => ({
-    ...formConfigAll,
-    ...formConfigByCategory[appConfig.category]
-})
+const infoText = [
+  <div key="3">Es handelt sich hierbei nicht um eine rechtskräftige Bestellung. Nach Absenden der Abfrage bekommen Sie von uns ein Angebot für die Einstickung und die zu bestickende Ware.</div>,
+  <div key="4"><b>Sollten Sie Fragen haben oder möchten Ihre Anfrage und eine Bestellung gleich mit uns besprechen, können Sie unter 0800/6288450* jederzeit einen unserer Servicemitarbeiter erreichen.</b></div>,
+  <div key="5">(*Kostenfrei aus dem dt. Fest- und Mobilfunknetz)</div>
+]
+
+const postUrl = "./sendmail.php"
+
+const config = {
+    ...appConfig,
+    form: {
+        ...formConfigAll,
+        ...formConfigByCategory[appConfig.category]
+    },
+    exampleImageUrl: exampleImageUrls[appConfig.category],
+    priceImageUrl: priceImageUrls[appConfig.category],
+    infoText: infoText,
+    postUrl: postUrl
+}
+
+export default config
+
+// export const getAppConfig = () => appConfig
+// export const getHintText = () hintText
+// export const getExampleImageUrl = () => exampleImageUrls[appConfig.category]
+// export const getPriceImageUrl = () => priceImageUrls[appConfig.category]
+// export const getFormConfig = () => ({
+//     ...formConfigAll,
+//     ...formConfigByCategory[appConfig.category]
+// })

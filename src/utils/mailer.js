@@ -1,12 +1,12 @@
 import fetch from 'isomorphic-fetch'
-import getUrlParam from './getUrlParam'
+import config from './config'
 
 
 export const sendMail = (fields) => {
-    let url = "./sendmail.php"
+    let url = config.postUrl
     let data = new FormData()
-    let productName = getUrlParam("name")
-    let productNumber= getUrlParam("productnumber")
+    let productName = config.productName
+    let productNumber= config.productNumber
 
     fields.textsecound = fields.textsecound || ""
     fields.usertext    = fields.usertext || ""
