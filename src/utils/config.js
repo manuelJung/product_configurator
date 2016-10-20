@@ -15,7 +15,8 @@ import font7 from 'assets/fonts/Designschrift.png'
 const appConfig = {
     productName: getUrlParam("name") || 'no product name',
     productNumber: getUrlParam("productnumber") || '',
-    category: getUrlParam("category") || 'Polos & Shirts' // TODO
+    category: getUrlParam("category") || 'Polos & Shirts', // TODO
+    postUrl: "./sendmail.php"
 }
 
 const formConfigAll = {
@@ -138,8 +139,6 @@ const infoText = [
   <div key="5">(*Kostenfrei aus dem dt. Fest- und Mobilfunknetz)</div>
 ]
 
-const postUrl = "./sendmail.php"
-
 const config = {
     ...appConfig,
     form: {
@@ -148,17 +147,7 @@ const config = {
     },
     exampleImageUrl: exampleImageUrls[appConfig.category],
     priceImageUrl: priceImageUrls[appConfig.category],
-    infoText: infoText,
-    postUrl: postUrl
+    infoText: infoText
 }
 
 export default config
-
-// export const getAppConfig = () => appConfig
-// export const getHintText = () hintText
-// export const getExampleImageUrl = () => exampleImageUrls[appConfig.category]
-// export const getPriceImageUrl = () => priceImageUrls[appConfig.category]
-// export const getFormConfig = () => ({
-//     ...formConfigAll,
-//     ...formConfigByCategory[appConfig.category]
-// })
