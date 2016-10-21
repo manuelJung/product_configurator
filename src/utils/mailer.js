@@ -18,9 +18,16 @@ export const sendMail = (fields) => {
 
     Object.keys(fields).forEach( key => data.append(key, fields[key]))
 
-    fetch(url, {method: "POST", body: data})
+    if(__PROD__){
+        fetch(url, {method: "POST", body: data})
+    }else {
+        console.log('send ('+url+'):', data)
+        console.log('fields:', fields)
+    }
 
     // send tracking event
-    parent._gaq.push(["_trackEvent", "Produktkonfigurator", "Send", productName])
+    if(__PROD__){
+        parent._gaq.push(["_trackEvent", "Produktkonfigurator", "Send", productName])
+    }
 
 }
