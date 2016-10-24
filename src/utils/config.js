@@ -15,12 +15,12 @@ import font7 from 'assets/fonts/Designschrift.png'
 const appConfig = {
     productName: getUrlParam("name") || 'no product name',
     productNumber: getUrlParam("productnumber") || '',
-    category: getUrlParam("category") || 'Polos & Shirts', // TODO
+    category: getUrlParam("category"),
     postUrl: "./sendmail.php"
 }
 
 const formConfigAll = {
-    fields: ["textfirst", "textsecound", "position", "font", "color", "fontsize", "firm", "name", "telefon", "email", "usertext", "logocheck"],
+    fields: ["textfirst", "textsecound", "position", "font", "color", "fontsize", "firm", "name", "telefon", "email", "usertext", "logocheck", "address", "zipcode", "city"],
     fontSizes: ["1,5 cm", "2,5 cm", "3,5 cm"],
     colors: [
         {label: "Weiß",       value: "white"},

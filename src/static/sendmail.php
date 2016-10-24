@@ -13,6 +13,9 @@ $telefon 		= $_POST['telefon'];
 $email 			= $_POST['email'];
 $haslogo 		= $_POST['logocheck'];
 $usertext       = $_POST['usertext'];
+$address        = $_POST['address'];
+$city   	    = $_POST['city'];
+$zipcode       	= $_POST['zipcode'];
 
 
 $customerservicemail = "service@jobeline.de";
@@ -30,6 +33,9 @@ $serviceteammessage = '
     Name:         '.$name.'<br/>
 	Telefon:      '.$telefon.'<br/>
 	EMail:        '.$email.'<br/>
+	Adresse:      '.$address.'<br/>
+	Postleitzahl: '.$zipcode.'<br/>
+	Ort:          '.$city.'<br/>
     <br/>
 	Produktname:  '.$productname.'<br/>
 	Produktnummer: '.$productnumber.'<br/>

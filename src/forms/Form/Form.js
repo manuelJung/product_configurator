@@ -29,7 +29,7 @@ export class Form extends Component {
 
   render() {
     const {
-      fields: { textfirst, textsecound, position, font, color, fontsize, firm, name, telefon, email, usertext, logocheck },
+      fields: { textfirst, textsecound, position, font, color, fontsize, firm, name, telefon, email, usertext, logocheck, address, zipcode, city },
       handleSubmit
     } = this.props
 
@@ -83,6 +83,19 @@ export class Form extends Component {
             label="Vor- und Nachname"
             placeholder="Max Mustermann"
             {...name}/>
+
+          <TextInput
+            label="Ort"
+            {...city}/>
+          
+          <TextInput
+            label="Postleitzahl"
+            {...zipcode}/>
+          
+          <TextInput
+            label="Adresse"
+            placeholder="Musterberg 23"
+            {...address}/>
 
           <TextInput isRequired
             label="Telefonnummer"

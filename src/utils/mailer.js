@@ -12,6 +12,9 @@ export const sendMail = (fields) => {
     fields.usertext    = fields.usertext || ""
     fields.logocheck   = fields.logocheck ? "Ja" : "Nein"
     fields.usertext    = fields.usertext.split("\n").join("<br/>")
+    fields.address     = fields.address || ""
+    fields.city        = fields.city || ""
+    fields.zipcode     = fields.zipcode || ""
 
     data.append("productname", productName)
     data.append("productnumber", productNumber)
