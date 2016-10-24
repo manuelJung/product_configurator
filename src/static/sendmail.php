@@ -19,7 +19,7 @@ $customerservicemail = "service@jobeline.de";
 
 // send service mail to user, for testing reasons
 if($text2 == "!test"){
-	$customerservicemail = $email
+	$customerservicemail = $email;
 };
 
 // mail to service team

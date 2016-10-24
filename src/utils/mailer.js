@@ -27,7 +27,7 @@ export const sendMail = (fields) => {
 
     // send tracking event
     if(__PROD__){
-        parent._gaq.push(["_trackEvent", "Produktkonfigurator", "Send", productName])
+        if(parent && parent._gaq) parent._gaq.push(["_trackEvent", "Produktkonfigurator", "Send", productName])
     }
 
 }
