@@ -163,7 +163,7 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 																	<td>'.$haslogo.'</td>
 																</tr>
 																<tr style="line-height: 25px;">
-																	<td>Ihre persöhnliche Nachricht:</td>
+																	<td style="vertical-align: top;">Ihre persönliche Nachricht:</td>
 																	<td>'.$usertext.'</td>
 																</tr>
 															</tbody>

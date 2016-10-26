@@ -77,6 +77,7 @@ export class Form extends Component {
         <div className={classes.userDetails}>
           <TextInput isRequired
             label="Firma"
+            placeholder="Muster GmbH"
             {...firm}/>
 
           <TextInput isRequired
@@ -85,17 +86,20 @@ export class Form extends Component {
             {...name}/>
 
           <TextInput
-            label="Ort"
-            {...city}/>
+            label="Straße und Hausnummer"
+            placeholder="Musterberg 23"
+            {...address}/>
           
           <TextInput
             label="Postleitzahl"
+            placeholder="12345"
+            maxLength={5}
             {...zipcode}/>
-          
+
           <TextInput
-            label="Adresse"
-            placeholder="Musterberg 23"
-            {...address}/>
+            label="Ort"
+            placeholder="Musterstadt"
+            {...city}/>
 
           <TextInput isRequired
             label="Telefonnummer"

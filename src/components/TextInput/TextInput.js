@@ -5,6 +5,7 @@ const propTypes = {
 	value: 			React.PropTypes.string.isRequired,
 	onChange: 		React.PropTypes.func.isRequired,
 	label: 			React.PropTypes.string.isRequired,
+	maxLength:      React.PropTypes.number,
 	type:			React.PropTypes.string,
 	placeholder: 	React.PropTypes.string,
 	isRequired: 	React.PropTypes.bool,
@@ -79,6 +80,7 @@ class TextInput extends React.Component {
 				type: 			this.props.type || "text",
 				value: 			this.props.value,
 				onChange: 		this.props.onChange,
+				maxLength:		this.props.maxLength,
 				// firefox hack
 				placeholder: 	this.state.isFocused ? this.props.placeholder : "",
 				required: 		this.props.isRequired,
