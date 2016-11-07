@@ -1,6 +1,12 @@
 import React from 'react'
 import classes from './TextInput.scss'
 
+
+function isIE () {
+  var myNav = navigator.userAgent.toLowerCase();
+  return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+}
+
 const propTypes = {
 	value: 			React.PropTypes.string.isRequired,
 	onChange: 		React.PropTypes.func.isRequired,
@@ -61,12 +67,18 @@ class TextInput extends React.Component {
 								? "visible"
 								: "hidden"
 			}),
+
 			description: (inputFocused, inputHasValue) => ({
 				transition: 		"transform 300ms ease",
 				transformOrigin: 	"0 -150%",
 				transform: 			inputFocused || inputHasValue
 										? "scale(0.6)"
 										: ""
+			}),
+
+			description_ie: () => ({
+				fontSize: "85%",
+				marginTop: "-10px"
 			})
 		}
 	}
@@ -91,7 +103,9 @@ class TextInput extends React.Component {
 				style: this.cs.hr(this.state.isFocused)
 			}),
 			description: () => ({
-				style: this.cs.description(this.state.isFocused, this.props.value !== "")
+				style: isIE() && isIE < 9
+					? this.cs.description_ie()
+					: this.cs.description(this.state.isFocused, this.props.value !== "")
 			})
 		}
 	}
