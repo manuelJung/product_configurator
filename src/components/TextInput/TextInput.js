@@ -103,7 +103,7 @@ class TextInput extends React.Component {
 				style: this.cs.hr(this.state.isFocused)
 			}),
 			description: () => ({
-				style: isIE() && isIE < 9
+				style: isIE() && isIE() < 9
 					? this.cs.description_ie()
 					: this.cs.description(this.state.isFocused, this.props.value !== "")
 			})
