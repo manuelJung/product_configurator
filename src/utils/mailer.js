@@ -14,7 +14,9 @@ export const sendMail = (fields) => {
         fields.textsecound = fields.textsecound || ""
         fields.usertext    = fields.usertext || ""
         fields.logocheck   = fields.logocheck ? "Ja" : "Nein"
-        fields.usertext    = fields.usertext.split("\n").join("<br/>")
+        fields.usertext    = fields.usertext
+            ? fields.usertext.split("\n").join("<br/>")
+            : ''
         fields.address     = fields.address || ""
         fields.city        = fields.city || ""
         fields.zipcode     = fields.zipcode || ""
@@ -137,7 +139,9 @@ export const sendMail = (fields) => {
         var $usertext = document.createElement('input')
             $usertext.type     = 'text'
             $usertext.name     = 'usertext'
-            $usertext.value    = fields.usertext.split("\n").join("<br/>") || ''
+            $usertext.value    = fields.usertext 
+                ? fields.usertext.split("\n").join("<br/>") || ''
+                : ''
             $form.appendChild($usertext)
 
         var $logocheck = document.createElement('input')
@@ -148,6 +152,11 @@ export const sendMail = (fields) => {
 
         document.body.appendChild($form)
         $form.submit()
+
+        // send tracking event
+        if(__PROD__){
+            if(parent && parent._gaq) parent._gaq.push(["_trackEvent", "Produktkonfigurator", "Send", productName])
+        }
     }
 
 

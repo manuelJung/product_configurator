@@ -108,7 +108,7 @@ export class Form extends Component {
 
           <TextInput isRequired
             label="E-Mail-Adresse"
-            type="email"
+            // type="email"
             placeholder="example@provider.com"
             {...email}/>
         </div>
