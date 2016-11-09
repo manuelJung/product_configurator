@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import { routerReducer as router } from 'react-router-redux'
-import {reducer as formReducer} from 'redux-form'
+// import {reducer as formReducer} from 'redux-form'
+import formReducer from 'modules/form'
 import FormularFinished from './FormularFinished'
 
 export const makeRootReducer = (asyncReducers) => {

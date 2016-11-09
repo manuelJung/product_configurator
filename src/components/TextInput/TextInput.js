@@ -91,7 +91,7 @@ class TextInput extends React.Component {
 			inputField: () => ({
 				type: 			this.props.type || "text",
 				value: 			this.props.value,
-				onChange: 		this.props.onChange,
+				onChange: 		(e) => this.props.onChange(e.target.value),
 				maxLength:		this.props.maxLength,
 				// firefox hack
 				placeholder: 	this.state.isFocused ? this.props.placeholder : "",

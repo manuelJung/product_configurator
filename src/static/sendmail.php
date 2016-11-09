@@ -1,4 +1,7 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+
+
 $productnumber 	= $_POST['productnumber'];
 $productname 	= $_POST['productname'];
 $text1 			= $_POST['textfirst'];
@@ -16,6 +19,7 @@ $usertext       = $_POST['usertext'];
 $address        = $_POST['address'];
 $city   	    = $_POST['city'];
 $zipcode       	= $_POST['zipcode'];
+$useragent      = $_POST['useragent'];
 
 
 $customerservicemail = "service@jobeline.de";
@@ -254,6 +258,35 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
 ';
 
 
+$debugmessage = '
+	EINSTICKUNGSANFRAGE:<br/>
+	<br/>
+	Firma:        '.$firm.'<br/>
+    Name:         '.$name.'<br/>
+	Telefon:      '.$telefon.'<br/>
+	EMail:        '.$email.'<br/>
+	Adresse:      '.$address.'<br/>
+	Postleitzahl: '.$zipcode.'<br/>
+	Ort:          '.$city.'<br/>
+    <br/>
+	Produktname:  '.$productname.'<br/>
+	Produktnummer: '.$productnumber.'<br/>
+    <br/>
+	Text Zeile 1: '.$text1.'<br/>
+	Text Zeile 2: '.$text2.'<br/>
+	Position:     '.$position.'<br/>
+	Schriftart:   '.$schrift.'<br/>
+	Schriftfarbe: '.$farbe.'<br/>
+	Schriftgröße: '.$hoehe.'<br/>
+	Logo:         '.$haslogo.'<br/>
+	<br/>
+	Kundentext:<br/>
+	'.$usertext.'<br/>
+	<br/>
+	User Agent: '.$useragent.'<br/>
+';
+
+
 
 
 $headers_user .= "From: Kundenservice JOBELINE <service@jobeline.de>\r\n";
@@ -264,6 +297,11 @@ $headers_serviceteam .= "From: Konfigurator Einstickung\r\n";
 $headers_serviceteam .= "MIME-Version: 1.0\r\n";
 $headers_serviceteam .= "Content-type: text/html; charset=utf-8\r\n";
 
+$headers_debug .= "From: Konfigurator Einstickung\r\n";
+$headers_debug .= "MIME-Version: 1.0\r\n";
+$headers_debug .= "Content-type: text/html; charset=utf-8\r\n";
+
+
 
 
 
@@ -271,10 +309,15 @@ $headers_serviceteam .= "Content-type: text/html; charset=utf-8\r\n";
 // sollte wordwrap() benutzt werden
 $usermessage 		= wordwrap($usermessage);
 $serviceteammessage = wordwrap($serviceteammessage);
+$debugmessage = wordwrap($debugmessage);
 
 // Send
 $user_mail_success 			= mail($email, 'Ihre Einstickungsanfrage bei JOBELINE', $usermessage, $headers_user);
 $serviceteam_mail_success 	= mail($customerservicemail, 'Kundenanfrage Einstickung JOBELINE Onlineshop ('.$email.')', $serviceteammessage, $headers_serviceteam);
+
+if(!$email || $email == 'undefined'){
+    $debug_mail_success 	= mail('manuel.jung.wwi12@gmail.com', 'Fehler bei EINSTICKUNG', $debugmessage, $headers_debug);
+};
 
 
 
@@ -284,10 +327,5 @@ if(!$user_mail_success){
 	echo "user message send fail";
 };
 
+echo $debugmessage;
 ?>
-
-
-
-
-
-

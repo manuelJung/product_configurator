@@ -10,7 +10,7 @@ const propTypes = {
 let InputCheckbox = (props) => (
 	<div className={classes.InputCheckbox}>
 		<label className={classes.label}>
-			<input type="checkbox" checked={props.value} onChange={props.onChange} />
+			<input type="checkbox" checked={props.value} onChange={() => props.onChange(!props.value)} />
 			{props.label}
 		</label>
 	</div>

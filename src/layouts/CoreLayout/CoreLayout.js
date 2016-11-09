@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './CoreLayout.scss'
 import '../../styles/core.scss'
 
-import Form from 'forms/Form'
+import ConnectedForm from 'containers/ConnectedForm'
 import ImageBox from 'components/ImageBox'
 import SuccessPage from 'components/SuccessPage'
 
@@ -20,7 +20,7 @@ class CoreLayout extends React.Component {
       <div id={classes.formContainer}>
         <h3 id={classes.headline}>{config.productName}</h3> 
         <hr id={classes.hr}/>
-        <Form onFinish={onFinish}/>
+        <ConnectedForm onFinish={onFinish}/>
       </div>
 
       <div id={classes.rightContainer}>
